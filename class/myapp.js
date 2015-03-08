@@ -23,11 +23,38 @@ function setup() {
     gallery.openDrawer();
   });*/
 }
-function handlePlayback() {
+
+
+function handlePlayback () {
   var song = artistMap[selectedArtistId].sampletrack.url;
+  console.log(song);
+  
   var myAudio = document.getElementById('music-sample');
-  myAudio.src = song;
-  myAudio.play();
+  var playImage = document.getElementById('play');
+  var equalImage = document.getElementById('equalizer');
+  var loaderImage = document.getElementById('loader');
+
+  if (isPlaying) {
+    myAudio.pause();
+  } else {
+    loaderImage.style.opacity = 1;
+    myAudio.src = xong;
+    myAudio.play();
+    playImage.style.opacity = 0;
+  }
+
+  myAudio.addEventListener('canplay', function() {
+    isPlaying = true;
+    loaderImage.style.opacity = 0;
+    equalImage.style.opacity = 1;
+  });
+
+  myAudio.addEventListener('pause', function() {
+    isPlaying = false;
+    equalImage.style.opacity = 0;
+    playImage.style.opacity = 1;
+    console.log('tried pausing');
+  });
 }
 
 function handleOpen() {
