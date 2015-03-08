@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	  <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0">
+    <meta name="mobile-web-app-capable" content="yes">
+	  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="myapp.css">
+  </head>
+  <body>
+
+    <content-gallery>
+      <div id="main-content">
+        <div id="artist-name"></div>
+        <div id="artist-description" class="scrollable"></div>
+        
+        <div id="sample-track">
+          <img id="play" src="play.png" />
+          <img id="equalizer" src="equalizer.gif" />
+          <div id="song">Track Title</div>
+          <audio id="music-sample"></audio>
+        </div>
+      </div>
+    </content-gallery>
+
+    <div id="header-bar"></div>
+
+    <script src="CustomElements.min.js"></script>
+    <script src="zepto.min.js"></script>
+    <script src="contentgallery.js"></script>
+    <script src="myapp-solution.js"></script>
+  </body>
+</html>
