@@ -1,6 +1,7 @@
 // BEGIN DAY 1.
 //this needs to be accessed from the whole page
 // sodefine it global
+
 var gallery;
 //Came from firebase
 var artistMap;
