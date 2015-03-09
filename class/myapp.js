@@ -6,6 +6,8 @@ var gallery;
 //Came from firebase
 var artistMap;
 var selectedArtistId;
+var isPlaying = false;
+
 function setup() {
   gallery = document.getElementById('myGallery');
   //listens for play and call handelPlay
@@ -32,13 +34,13 @@ function handlePlayback () {
   var myAudio = document.getElementById('music-sample');
   var playImage = document.getElementById('play');
   var equalImage = document.getElementById('equalizer');
-  var loaderImage = document.getElementById('loader');
+  var loaderImage = document.getElementById('load');
 
   if (isPlaying) {
     myAudio.pause();
   } else {
     loaderImage.style.opacity = 1;
-    myAudio.src = xong;
+    myAudio.src = song;
     myAudio.play();
     playImage.style.opacity = 0;
   }
